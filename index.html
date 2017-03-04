@@ -2,17 +2,73 @@
 <html>
     
     <head>
-     
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-       <input type="range" min="0" max="360" value="1" step="5" onchange="showValue(this.value)" />
-<span id="range">0</span>
-<script type="text/javascript">
-function showValue(newValue)
-{
-	document.getElementById("range").innerHTML=newValue;
-}
-</script>
+        <div class="sliders"> 
+            <div class="row">
+                <div class= "col-xs-5">
+                </div>
+                 <div class= "col-xs-2">
+                     <div class= "slider" >
+                         <h4>R</h4>     
+                        <input type="range" min="0" max="360" value="1" step="5" onchange="showValue(this.value, 'R')" />
+                        <span id="R">0</span>
+                     </div>
+                </div>     
+            </div>  
+            <div class="row">
+                <div class= "col-xs-5">
+                </div>
+                 <div class= "col-xs-2">
+                     <div class= "slider" >
+                         <h4>G</h4>     
+                        <input type="range" min="0" max="360" value="1" step="5" onchange="showValue(this.value, 'G')" />
+                        <span id="G">0</span>
+                     </div>
+                </div>     
+            </div>
+            <div class="row">
+                <div class= "col-xs-5">
+                </div>
+                 <div class= "col-xs-2">
+                     <div class= "slider" >
+                         <h4>B</h4>     
+                        <input type="range" min="0" max="360" value="1" step="5" onchange="showValue(this.value, 'B')" />
+                        <span id="B">0</span>
+                     </div>
+                </div>     
+            </div>
+        </div>
     </body>
 </html>
-<
+
+<style>
+    .sliders{
+        margin-top: 25% ;
+        margin-bottom: auto;
+        background-color: whitesmoke;
+        font-family: monospace;
+    }
+   
+</style>
+<script type="text/javascript">
+            
+    var R;
+    var G;
+    var B;
+function showValue(newValue,id)
+{
+    if(id == "R") R = newValue;
+    else if(id == "G") G == newValue;
+    else B == newValue;
+	document.getElementById(id).innerHTML=newValue;
+}
+    
+</script> 
+    
